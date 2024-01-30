@@ -117,13 +117,14 @@ ext_modules = [
         sources=FILES + ['python/kenlm.cpp'],
         language='C++', 
         include_dirs=['.'] + INCLUDE_PATHS,
+        depends = ['python/BuildStandalone.cmake'],
         libraries=LIBS, 
         extra_compile_args=ARGS),
 ]
 
 setup(
     name='camel-kenlm',
-    version='2023.3.17.2',
+    version='2024.1.30',
     url='https://github.com/CAMeL-Lab/camel-kenlm',
     ext_modules=ext_modules,
     cmdclass={"build_ext": build_ext},
