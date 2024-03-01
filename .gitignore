@@ -22,3 +22,4 @@ Makefile
 *.egg-info
 /dist
 .DS_Store
+.env
