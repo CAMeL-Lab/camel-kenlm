@@ -39,9 +39,9 @@ jobs:
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
           CIBW_SKIP: "pp* *-manylinux_i686 *-musllinux_*"
 
-      - uses: actions/upload-artifact@v3
-        with:
-          path: ./wheelhouse/*.whl
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     path: ./wheelhouse/*.whl
 
   # build_sdist:
   #   name: Build source distribution
