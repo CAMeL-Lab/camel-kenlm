@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-14]
+        os: [ubuntu-latest, ubuntu-latest-arm64, macOS-14]
 
     steps:
       - uses: actions/checkout@v5
@@ -35,7 +35,7 @@ jobs:
             { apt-get update && apt-get install libboost-all-dev; }
             "
           CIBW_ARCHS_MACOS: "native"
-          CIBW_ARCHS_LINUX: "x86_64 aarch64"
+          CIBW_ARCHS_LINUX: "native"
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
           CIBW_SKIP: "pp* *musllinux*"
 
