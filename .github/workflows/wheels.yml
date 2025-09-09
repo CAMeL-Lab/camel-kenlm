@@ -25,6 +25,7 @@ jobs:
         with:
           output-dir: wheelhouse
         env:
+          MACOSX_DEPLOYMENT_TARGET: 13.0
           CIBW_BEFORE_ALL_MACOS:
             brew update &&
             brew upgrade cmake &&
