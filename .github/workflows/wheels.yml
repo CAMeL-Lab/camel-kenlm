@@ -8,7 +8,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-24.04, ubuntu-24.04-arm, macOS-14, macOS-13]
+        os: [ubuntu-22.04, ubuntu-22.04-arm, ubuntu-24.04, ubuntu-24.04-arm, macOS-14, macOS-13]
 
     steps:
       - uses: actions/checkout@v5
@@ -38,7 +38,7 @@ jobs:
           CIBW_ARCHS_MACOS: "native"
           CIBW_ARCHS_LINUX: "native"
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
-          CIBW_SKIP: "pp* *musllinux*"
+          # CIBW_SKIP: "pp* *musllinux*"
 
       - uses: actions/upload-artifact@v4
         with:
