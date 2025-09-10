@@ -38,7 +38,7 @@ jobs:
           CIBW_ARCHS_MACOS: "native"
           CIBW_ARCHS_LINUX: "native"
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
-          # CIBW_SKIP: "pp* *musllinux*"
+          CIBW_SKIP: "pp* *musllinux*"
 
       - uses: actions/upload-artifact@v4
         with:
