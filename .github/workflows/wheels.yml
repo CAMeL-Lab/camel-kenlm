@@ -53,8 +53,8 @@ jobs:
 
       - name: Build sdist
         env:
-          CIBW_BEFORE:
-            pip install --upgrade pip
+          CIBW_BEFORE_ALL_LINUX:
+            pip install --upgrade pip &&
             pip install build
 
         run: python -m build --outdir dist
