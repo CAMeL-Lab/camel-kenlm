@@ -55,11 +55,9 @@ jobs:
 
       - name: Build sdist
         env:
-          CIBW_BEFORE_ALL_LINUX:
-            pip install --upgrade pip &&
-            pip install build
+          CIBW_PROJECT_REQUIRES_PYTHON: "3.9"
 
-        run: python -m build --outdir dist
+        run: pip install --upgrade pip && pip install build && python -m build --outdir dist
 
       - uses: actions/upload-artifact@v4
         with:
