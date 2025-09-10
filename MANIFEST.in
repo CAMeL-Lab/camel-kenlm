@@ -7,3 +7,11 @@ include util/*.cc
 include util/*.hh
 include util/double-conversion/*.cc
 include util/double-conversion/*.h
+
+# Add missing files for source distribution
+include CMakeLists.txt
+include python/BuildStandalone.cmake
+include python/CMakeLists.txt
+include python/*.hh
+include python/*.pyx
+include python/*.pxd
