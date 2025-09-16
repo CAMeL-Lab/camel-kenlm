@@ -12,11 +12,11 @@ jobs:
           ubuntu-24.04,
           ubuntu-24.04-arm,
           macOS-13,         # macOS-13 x86_64
-          macos-13-xlarge,  # macOS-13 arm64
+          macOS-13-xlarge,  # macOS-13 arm64
           macOS-14,         # macOS-14 arm64
-          macos-14-large,   # macOS-14 x86_64
+          macOS-14-large,   # macOS-14 x86_64
           macOS-15,         # macOS-15 arm64
-          macos-15-large,   # macOS-15 x86_64
+          macOS-15-large,   # macOS-15 x86_64
         ]
 
     steps:
@@ -29,9 +29,9 @@ jobs:
           matrix.os == 'macOS-13' ||
           matrix.os == 'macOS-13-xlarge' ||
           matrix.os == 'macOS-14' ||
-          matrix.os == 'macOs-14-large' ||
+          matrix.os == 'macOS-14-large' ||
           matrix.os == 'macOS-15' ||
-          matrix.os == 'macOs-15-large'
+          matrix.os == 'macOS-15-large'
         with:
           xcode-version: latest-stable
 
