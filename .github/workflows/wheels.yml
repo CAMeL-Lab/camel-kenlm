@@ -29,14 +29,15 @@ jobs:
           matrix.os == 'macOS-13' ||
           matrix.os == 'macOS-13-xlarge' ||
           matrix.os == 'macOS-14' ||
-          matrix.os == 'macos-14-large' ||
+          matrix.os == 'macOs-14-large' ||
           matrix.os == 'macOS-15' ||
-          matrix.os == 'macos-15-large'
+          matrix.os == 'macOs-15-large'
         with:
           xcode-version: latest-stable
 
       - name: Build package Ubuntu all
         uses: pypa/cibuildwheel@v3.1.4
+        if: matrix.os == 'ubuntu-24.04' || matrix.os == 'ubuntu-24.04-arm'
         with:
           output-dir: wheelhouse
         env:
