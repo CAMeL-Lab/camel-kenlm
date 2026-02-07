@@ -124,7 +124,7 @@ ext_modules = [
 
 setup(
     name='camel-kenlm',
-    version='2025.09.16',
+    version='2026.02.07',
     url='https://github.com/CAMeL-Lab/camel-kenlm',
     ext_modules=cythonize(ext_modules, compiler_directives={'language_level': 3}),
     cmdclass={"build_ext": build_ext},
