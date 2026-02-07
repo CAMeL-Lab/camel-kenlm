@@ -22,4 +22,10 @@ Makefile
 *.egg-info
 /dist
 .DS_Store
-.env
+.env*
+python/kenlm.cpp
+*.so
+*.dylib
+*.a
+*.dll
+*.lib
