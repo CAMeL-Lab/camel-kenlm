@@ -46,7 +46,7 @@ jobs:
             { apt-get update && apt-get install libboost-all-dev; }
             "
           CIBW_ARCHS_LINUX: "native"
-          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
+          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.15"
           CIBW_SKIP: "pp* *musllinux*"
 
       - name: Build package macOS 13
@@ -62,7 +62,7 @@ jobs:
             brew install boost &&
             pip install --upgrade pip
           CIBW_ARCHS_MACOS: "native"
-          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
+          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.15"
 
       - name: Build package macOS 14
         uses: pypa/cibuildwheel@v3.1.4
@@ -77,7 +77,7 @@ jobs:
             brew install boost &&
             pip install --upgrade pip
           CIBW_ARCHS_MACOS: "native"
-          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
+          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.15"
 
       - name: Build package macOS 15
         uses: pypa/cibuildwheel@v3.1.4
@@ -92,7 +92,7 @@ jobs:
             brew install boost &&
             pip install --upgrade pip
           CIBW_ARCHS_MACOS: "native"
-          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.13"
+          CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.15"
 
       - uses: actions/upload-artifact@v4
         with:
