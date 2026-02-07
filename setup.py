@@ -7,6 +7,7 @@ import os
 import sys
 import re
 from pathlib import Path
+from Cython.Build import cythonize
 
 #Does gcc compile with this header and library?
 def compile_test(header, library):
@@ -113,7 +114,7 @@ class build_ext(_build_ext):
 
 ext_modules = [
     Extension(name='kenlm',
-        sources=FILES + ['python/kenlm.cpp'],
+        sources=FILES + ['python/kenlm.pyx'],
         language='C++', 
         include_dirs=['.'] + INCLUDE_PATHS,
         depends = ['python/BuildStandalone.cmake'],
@@ -125,7 +126,7 @@ setup(
     name='camel-kenlm',
     version='2025.09.16',
     url='https://github.com/CAMeL-Lab/camel-kenlm',
-    ext_modules=ext_modules,
+    ext_modules=cythonize(ext_modules, compiler_directives={'language_level': 3}),
     cmdclass={"build_ext": build_ext},
     include_package_data=True,
 )
