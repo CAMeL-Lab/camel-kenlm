@@ -79,11 +79,6 @@ jobs:
           CIBW_ARCHS_MACOS: "native"
           CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9, <3.15"
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: wheels-${{ matrix.os }}
-          path: ./wheelhouse/*.whl
-
       - name: Build package macOS 26
         uses: pypa/cibuildwheel@v3.1.4
         if: matrix.os == 'macOS-26' || matrix.os == 'macOS-26-large'
@@ -103,6 +98,7 @@ jobs:
         with:
           name: wheels-${{ matrix.os }}
           path: ./wheelhouse/*.whl
+          overwrite: true
 
   build_sdist:
     name: Build source distribution
@@ -124,6 +120,7 @@ jobs:
           path: |
             dist/*.tar.gz
             empty.txt
+          overwrite: true
 
   # upload_pypi:
   #   needs: [build_wheels, build_sdist]
